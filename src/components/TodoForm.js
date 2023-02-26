@@ -27,6 +27,7 @@ const InputStyle = styled("input")(() => ({
 function TodoForm() {
     const onSubmit = function (e) {
         e.preventDefault();
+        if (e.target[0].value === '' || e.target[1].value === '') return null;
         addTodoItem(<TodoItem title={e.target[0].value} text={e.target[1].value} />);
     };
 

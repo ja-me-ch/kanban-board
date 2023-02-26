@@ -14,7 +14,6 @@ const RootStyle = styled("div")((props) => ({
 }));
 
 const TodoItems = styled("div")((props) => ({
-    // border: '1px solid blue',
     minHeight: "7rem",
 }));
 

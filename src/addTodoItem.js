@@ -1,7 +1,7 @@
 import ReactDOMServer from 'react-dom/server'
 import { addDragEventListeners } from "./drag";
 
-const AddTodoItem = function (todoItem) {
+const addTodoItem = function (todoItem) {
     const firstColumn = document.querySelector(
         ".column:first-child .todo-items-column .todo-item:last-child"
     );
@@ -11,4 +11,4 @@ const AddTodoItem = function (todoItem) {
     addDragEventListeners(recentlyAddedItem);
 };
 
-export default AddTodoItem;
+export default addTodoItem;

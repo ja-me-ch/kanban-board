@@ -1,10 +1,9 @@
-import React, { ReactDOM } from "react";
+import React from "react";
 import { styled } from "@mui/material";
-import AddTodoItem from "../addTodoItem";
+import addTodoItem from "../addTodoItem";
 import TodoItem from "./TodoItem";
 
 const RootStyle = styled("div")(() => ({
-    // border: '1px solid red',
     display: "flex",
 }));
 
@@ -28,16 +27,12 @@ const InputStyle = styled("input")(() => ({
 function TodoForm() {
     const onSubmit = function (e) {
         e.preventDefault();
-        AddTodoItem(<TodoItem title={e.target[0].value} text={e.target[1].value} />);
-        // const root = ReactDOM.createRoot(document.getElementById("root"));
-        // const element = <h1>Hello, world</h1>;
-        // root.render(element);
+        addTodoItem(<TodoItem title={e.target[0].value} text={e.target[1].value} />);
     };
 
     return (
         <RootStyle>
             <form onSubmit={onSubmit}>
-                {/* <button type="submit" disabled></button> */}
                 <InputStyle
                     type={"text"}
                     placeholder={"New Title"}

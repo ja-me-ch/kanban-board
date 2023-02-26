@@ -1,14 +1,9 @@
-const AddEventListeners = function () {
+const addEventListeners = function () {
     const draggables = document.querySelectorAll(".todo-item");
     const droppables = document.querySelectorAll(".todo-items-column");
 
     draggables.forEach((item) => {
-        item.addEventListener("dragstart", () => {
-            item.classList.add("is-dragging");
-        });
-        item.addEventListener("dragend", () => {
-            item.classList.remove("is-dragging");
-        });
+        addDragEventListeners(item);
     });
 
     droppables.forEach((todoscolumn) => {
@@ -42,8 +37,16 @@ const AddEventListeners = function () {
             },
             { offset: Number.NEGATIVE_INFINITY }
         );
-
     };
 };
 
-export default AddEventListeners;
+export const addDragEventListeners = function (item) {
+    item.addEventListener("dragstart", () => {
+        item.classList.add("is-dragging");
+    });
+    item.addEventListener("dragend", () => {
+        item.classList.remove("is-dragging");
+    });
+};
+
+export default addEventListeners;

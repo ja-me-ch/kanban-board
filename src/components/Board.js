@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Column from "./Column";
 import TodoForm from "./TodoForm";
 
 import { styled } from "@mui/material";
-import AddEventListeners from "../drag";
+import addEventListeners from "../drag";
 
 const RootStyle = styled("div")((props) => ({
     // display: 'absolute',
@@ -31,7 +31,7 @@ function Board() {
     ];
 
     useEffect(() => {
-        AddEventListeners();
+        addEventListeners();
     });
 
     return (

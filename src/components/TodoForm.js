@@ -29,6 +29,8 @@ function TodoForm() {
         e.preventDefault();
         if (e.target[0].value === '' || e.target[1].value === '') return null;
         addTodoItem(<TodoItem title={e.target[0].value} text={e.target[1].value} />);
+        e.target[0].value = '';
+        e.target[1].value = '';
     };
 
     return (
